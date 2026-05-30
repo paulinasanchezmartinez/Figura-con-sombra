@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Graficacion</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Graficacion</h1>
+    </header>
+    <nav>
+        <div>
+            <button onclick="drawPoint(100, 100)">punto</button>
+            <button onclick="drawLine(100, 100, 200, 200)">linea</button>
+            <button onclick="drawRectangle(100, 100, 200, 200)">rectangulo</button>
+            <button onclick="drawCircle(100, 100, 100, 'green')">circulo</button>
+            <button onclick="drawTriangle(100, 50, 200, 200, 50, 200, 'red', 'black', 2)">triangulo</button>
+            <button onclick="drawPolygon(
+                [
+                    { x: 150, y: 50 },
+                    { x: 250, y: 120 },
+                    { x: 220, y: 220 },
+                    { x: 80,  y: 220 },
+                    { x: 50,  y: 120 }
+                ],
+                'lightgreen',
+                'green'
+            )">poligono</button>
+            <button onclick="drawText('Hola Canvas', 100, 100)">texto</button>
+            <button onclick="drawImage(100, 100, 200, 200)">imagen</button>
+            <button onclick="clearCanvas()">limpiar</button>
+            <button onclick="dibujarPlanoCartesiano()">dibujar plano cartesiano</button>
+        </div>
+        <br>
+        <div>
+            <label>Lina de punto A a B</label>
+            <input type="text" id="x1" placeholder="X1">
+            <input type="text" id="y1" placeholder="Y1">
+            <input type="text" id="x2" placeholder="X2">
+            <input type="text" id="y2" placeholder="Y2">
+            <button onclick="drawLineFromAtoB()">Dibujar</button>
+        </div>
+        <div>
+            <label>Estrella de 4 puntas</label>
+            <button onclick="drawStar()">Dibujar</button>
+            <button onclick="RotateStarOnZ(250, 250, 0, 5)">Rotar en el eje Z</button>
+            <button onclick="RotateStarOnX(250, 250, 0, 5)">Rotar en el eje X</button>
+            <button onclick="RotateStarOnY(250, 250, 0, 5)">Rotar en el eje Y</button>
+        </div>
+        <div>
+            <label>circulo</label>
+            <input type="text" id="x" placeholder="X" value="0">
+            <input type="text" id="y" placeholder="Y" value="0">
+            <input type="text" id="radius" placeholder="Radio" value="100">
+            <button onclick="drawCircleWithMath()">Dibujar</button>
+        </div>
+        <div>
+            <label for="">Dibujar Reloj</label>
+            <button onclick="drawClock()">Dibujar</button>
+            <button onclick="stopClock()">Detener</button>
+        </div>
+        <div>
+            <label for="">Dibujar una onda senoidal</label>
+            <input type="text" id="frequency" placeholder="Frecuencia" value="10">
+            <input type="text" id="amplitude" placeholder="Amplitud" value="100">
+            <input type="text" id="phase" placeholder="Fase" value="15">
+            <button onclick="drawSineWave()">Dibujar</button>
+        </div>
+        <div>
+            <button onclick="resetAndDrawPentagono()">Pentagono</button>
+            <button onclick="toggleSombraPentagono()">Sombra</button>
+            <button onclick="rotatePentagono('Z', 5)">Rotar Z</button>
+            <button onclick="rotatePentagono('X', 5)">Rotar X</button>
+            <button onclick="rotatePentagono('Y', 5)">Rotar Y</button>
+        </div>
+    </nav>
+    <main>
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+    </main>
+    <footer>
+        <p>Derechos reservados &copy; 2026</p>
+        <p>Tecnologico de Tlajomulco</p>
+        <p>Materia: Graficacion</p>
+        <p>Profesor: Jose Angel Torres Rangel</p>
+    </footer>
+</body>
+</html>
